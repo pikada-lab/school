@@ -1,0 +1,8 @@
+ErrorDocument 404 /404.php
+ 
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^$ index.php?cl=Home [NC] 
+
+RewriteRule ^api/([a-z0-9_]+)/([a-z0-9_]+)/?([a-z0-9_]+)$ api.php?space=$1&fn=$2&id=$3 [NC] 
