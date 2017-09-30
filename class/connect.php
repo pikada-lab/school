@@ -5,23 +5,21 @@
 *	
 */
 class connect {
-	private static $server = 'YOU SERVER MYSQL';
-	private static $user = 'YOU USER MYSQL';
-	private static $password = 'YOU PWD';
-	private static $base = 'YOU BASE';
+	private static $server = 'mysql7.locum.ru';
+	private static $user = 'perspekt_schoo50';
+	private static $password = '4aLxJmYFpzH';
+	private static $base = 'perspekt_schoo50';
 	private static $connectdb;
     private static $instance;
 	
 	/**
 	*	@method:__construct - вызываетс¤ автоматически при создании класса, создаёт соединение с базой данных
 	*/
-	public function __construct() {
-		if(self::$server != "YOU SERVER MYSQL") {
-			$connectdb = mysql_connect(self::$server, self::$user, self::$password) or die("Ѕазы данных временно недоступны. " );
-			self::$connectdb = $connectdb; 
-			self::open(self::$base);
-			self::setEncoding('utf8');
-		}
+	public function __construct() { 
+		$connectdb = mysql_connect(self::$server, self::$user, self::$password) or die("<p>Базы данных временно недоступны. " );
+		self::$connectdb = $connectdb; 
+		self::open(self::$base);
+		self::setEncoding('utf8'); 
 	}
 	
 	/**
